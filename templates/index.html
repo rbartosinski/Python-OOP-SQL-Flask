@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h2>Kino</h2>
+        <p>Dodaj kino do bazy podając wszystkie wymagane dane.<br>
+        Aby jednak usunąć kino z bazy wystarczy wpisać jego nazwę.<br>
+        Możesz też pokazać listę kin lub wyszukiwać kina w bazie wg nazwy</p>
+        <div>
+            <form class="cinema_form" method="post" action="#">
+                <label>Nazwa</label><br>
+                <input name="name" type="text" maxlength="255" value=""/><br>
+                <label>Adres</label><br>
+                <input name="address" type="text" maxlength="255" value=""/><br>
+                <button type="submit" name="submit" value="add_cinema">Dodaj kino</button>
+                <button type="submit" name="submit" value="remove_cinema">Usuń kino</button><br>
+                <button type="submit" name="submit" value="show_cinemas">Pokaż wszystkie kina</button>
+                <button type="submit" name="submit" value="search_cinema">Szukaj kina</button>
+            </form>
+        </div>
+    <h2>Filmy</h2>
+        <p>Dodaj film do bazy podając wszystkie wymagane dane.<br>
+        Aby usunąć film podaj jego nazwę.</p>
+        <div>
+            <form class="movie_form" method="post" action="#">
+                <label>Nazwa</label><br>
+                <input name="name" type="text" maxlength="255" value=""/><br>
+                <label>Opis</label><br>
+                <input name="desc" type="text" maxlength="255" value=""/><br>
+                <label>Rating</label><br>
+                <input name="rating" type="number" min="0"/><br>
+                <button type="submit" name="submit" value="add_movie">Dodaj film</button>
+                <button type="submit" name="submit" value="remove_movie">Usuń film</button><br>
+                <button type="submit" name="submit" value="show_movies">Pokaż wszystkie filmy</button><br>
+                <label>Wyszukiwarka filmów</label><br>
+                <button type="submit" name="submit" value="search_mov_by_name">Wg nazwy</button><br>
+                <button type="submit" name="submit" value="search_mov_by_rate">Wg ratingu</button>
+            </form>
+        </div>
+    <h2>Bilety</h2>
+    <p>Dodaj bilet do bazy podając wszystkie wymagane dane.</p>
+        <div>
+            <form class="ticket_form" method="post" action="#">
+                <label>Ilosc</label><br>
+                <input name="quantity" type="number" min="0"/><br>
+                <label>Cena</label><br>
+                <input name="price" type="number" min="-10" step="0.01"/><br>
+                <button type="submit" name="submit" value="add_ticket">Dodaj bilet(y)</button>
+            </form>
+        </div>
+    <p>Aby usunąć bilet podaj numer ID biletu.</p>
+        <div>
+            <form class="ticket_form" method="post" action="#">
+                <label>ID</label><br>
+                <input name="ID" type="number" min="0"/><br>
+                <button type="submit" name="submit" value="remove_ticket">Usuń bilet(y)</button>
+            </form>
+        </div>
+    <h2>Płatności</h2>
+    <p>Dodaj płatności do bazy podając wszystkie wymagane dane.</p>
+        <div>
+            <form class="payment_form" method="post" action="#">
+                <label>Typ platnosci</label><br>
+                <select name="payment_type">
+                    <option value="transfer">Przelew</option>
+                    <option value="cash">Gotówka</option>
+                    <option value="card">Karta</option>
+                </select><br>
+                <label>Data</label><br>
+                <input type="date" name="payment_date"><br>
+                <button type="submit" name="submit" value="add_payment">Dodaj płatność</button>
+            </form>
+        </div>
+    <p>Aby usunąć płatność podaj numer ID płatności.</p>
+        <div>
+            <form class="payment_form" method="post" action="#">
+                <label>ID</label><br>
+                <input name="ID" type="number" min="0"/><br>
+                <button type="submit" name="submit" value="remove_payment">Usuń płatność</button>
+            </form>
+        </div>
+    <p>Wyszukiwarka płatności:</p>
+        <div>
+            <form class="payment_form" method="post" action="#">
+                <label>Metoda wyszukiwania płatności</label><br>
+                <select name="payment_search_type">
+                    <option value="day">Wg dnia</option>
+                    <option value="older">Starsze niż...</option>
+                    <option value="newer">Nowsze niż...</option>
+                    <option value="between">Zakres</option>
+                </select><br>
+                <label>Wpisz datę wyszukiwania:</label><br>
+                <input type="date" name="payment_date_from">
+                <input type="date" name="payment_date_to"><br>
+                <button type="submit" name="submit" value="search_payment">Wyszukaj</button>
+                <button type="submit" name="submit" value="show_payments">Pokaż wszystkie płatności</button>
+            </form>
+        </div>
+</body>
+</html>
